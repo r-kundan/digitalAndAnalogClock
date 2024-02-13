@@ -54,7 +54,7 @@ function App() {
           <span style={{ "--i": 11 }}><b>11</b></span>
           <span style={{ "--i": 12 }}><b>12</b></span>
         </div>
-        {/* <Boxclock/> */}
+        
       </div>
     </>
   )

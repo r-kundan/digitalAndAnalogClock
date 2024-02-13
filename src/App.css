@@ -43,7 +43,6 @@ span b {
   border: 2px solid cyan;
   border-radius: 50%;
   box-shadow: inset 0px 0px 10px cyan;
-
 }
 #clock-con::before {
   content: "";
@@ -64,10 +63,9 @@ span b {
   border-top-left-radius: 20px;
 }
 
-
 .hour-hand {
-  top: 36%; 
-  left: 48.8%; 
+  top: 36%;
+  left: 48.8%;
   width: 6px;
   height: 40px;
   background: rgb(255, 103, 103);
@@ -75,7 +73,7 @@ span b {
 
 .minute-hand {
   position: absolute;
-  top: 29%; 
+  top: 29%;
   left: 49%;
   width: 4px;
   height: 60px;
@@ -85,11 +83,9 @@ span b {
 .second-hand {
   position: absolute;
   transform-origin: 50% 100%;
-  top: 26%; 
+  top: 26%;
   left: 49.5%;
   width: 3px;
   height: 70px;
   background: rgb(133, 133, 239);
-
 }
-
