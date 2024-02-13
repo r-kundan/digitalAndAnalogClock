@@ -1,64 +1,39 @@
-import React from 'react'
-import './Boxclock.scss'
+import React, { useEffect } from "react";
+import "./Boxclock.scss";
 function Boxclock() {
-  const boxd = new Date()
-  const tarik = boxd.getDate()
-  const month = boxd.getMonth()
-  const year = boxd.getFullYear()
+  const today = new Date();
+  const daylist = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const day = today.getDay();
+  let hour = today.getHours();
+  hour = hour >= 12 ? hour - 12 : hour;
+  const minute = today.getMinutes();
+  const second = today.getSeconds();
+  let prepand = hour >= 12 ? " AM " : " PM ";
   return (
-    <div id='main'>
+    <div id="main">
+<div className="main-2">
 
-      <div className="boxcontainer">
-        <div id="date">{tarik}</div>
-        <div id="month">{month + 1}</div>
-        <div id="year">{year}</div>
+<div className="day">
+        <h2>Today is :- {daylist[day]} </h2>
       </div>
+<hr />      <div className="time">
+        <h3>
+          Current Time :- {hour}
+          {prepand}: {minute} : {second}
+        </h3>
+      </div>
+</div>
+
     </div>
-  )
+  );
 }
 
-export default Boxclock
-// import React, { useState, useEffect } from 'react';
-// import './App.css';
-
-// const AnalogClock = () => {
-//   const [time, setTime] = useState(new Date());
-
-//   useEffect(() => {
-//     const intervalID = setInterval(() => {
-//       setTime(new Date());
-//     }, 1000);
-
-//     return () => clearInterval(intervalID);
-//   }, []);
-
-//   const hours = time.getHours();
-//   const minutes = time.getMinutes();
-//   const seconds = time.getSeconds();
-
-//   const hourAngle = ((hours % 12) + minutes / 60 + seconds / 3600) * 30;
-//   const minuteAngle = (minutes + seconds / 60) * 6;
-//   const secondAngle = seconds * 6;
-
-//   const hourHandStyle = {
-//     transform: `rotate(${hourAngle}deg)`,
-//   };
-
-//   const minuteHandStyle = {
-//     transform: `rotate(${minuteAngle}deg)`,
-//   };
-
-//   const secondHandStyle = {
-//     transform: `rotate(${secondAngle}deg)`,
-//   };
-
-//   return (
-//     <div className="clock">
-//       <div className="hand hour-hand" style={hourHandStyle}></div>
-//       <div className="hand minute-hand" style={minuteHandStyle}></div>
-//       <div className="hand second-hand" style={secondHandStyle}></div>
-//     </div>
-//   );
-// };
-
-// export default AnalogClock;
+export default Boxclock;
